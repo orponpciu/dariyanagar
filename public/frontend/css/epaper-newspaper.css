@@ -1,0 +1,462 @@
+
+/* =======================================================
+   DAILY DARIYANAGAR
+   VINTAGE PRINT NEWSPAPER DESIGN
+   ======================================================= */
+
+.ep-sheet,
+.ep-column-print {
+    --paper: #fdf7e9;
+    --ink: #251f19;
+    --print-red: #842c22;
+    --rule: #a69b87;
+
+    color: var(--ink);
+    background: var(--paper);
+
+    font-family:
+        'DariyaPrint',
+        'Noto Serif Bengali',
+        Georgia,
+        serif;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+.ep-sheet *,
+.ep-column-print * {
+    box-sizing: border-box;
+}
+
+/* NEWSPAPER PHYSICAL SHEET */
+
+.ep-sheet {
+    position: relative;
+
+    width: min(100%, 930px);
+    min-height: 1290px;
+
+    padding: 34px 38px 56px;
+
+    margin: 0 auto;
+
+    box-shadow: 0 12px 36px #24190e30;
+    border: 1px solid #c5b69b;
+}
+
+.ep-sheet a,
+.ep-column-print a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.ep-sheet a:hover {
+    color: var(--print-red);
+}
+
+/* TOP ISSUE STRIP */
+
+.ep-issue-topline {
+    font: 600 10px Georgia, serif;
+
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+
+    display: flex;
+    justify-content: space-between;
+
+    gap: 5px;
+
+    padding: 2px 0 9px;
+
+    border-bottom: 1px solid var(--ink);
+}
+
+/* ORIGINAL PRINT MASTHEAD */
+
+.ep-masthead {
+    text-align: center;
+
+    border-bottom: 5px double var(--ink);
+
+    padding: 13px 0 8px;
+
+    margin: 0;
+}
+
+.ep-masthead-ornament {
+    font: 600 10px Georgia, serif;
+    letter-spacing: 3px;
+}
+
+.ep-masthead-name {
+    font-family:
+        'DariyaPrint',
+        'Noto Serif Bengali',
+        serif;
+
+    font-size: 58px;
+    font-weight: 900;
+
+    line-height: 1.5;
+    letter-spacing: -1px;
+}
+
+.ep-masthead-sub {
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    margin-top: -3px;
+}
+
+/* DATE / PUBLICATION / PAGE NUMBER */
+
+.ep-issue-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 9px 0;
+
+    border-bottom: 3px solid var(--ink);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    margin-bottom: 12px;
+}
+
+/* NEWSPAPER SECTION HEADINGS */
+
+.ep-cover-kicker,
+.ep-section-banner {
+    background: var(--print-red);
+    color: #fff;
+
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: 800;
+
+    text-align: center;
+
+    padding: 7px 12px;
+}
+
+/* FRONT PAGE HEADLINE */
+
+.ep-cover-headline {
+    font-size: 36px;
+    line-height: 1.55;
+
+    font-weight: 900;
+    text-align: center;
+
+    letter-spacing: -0.4px;
+
+    padding: 6px 10px 0;
+    margin: 8px 0 3px;
+}
+
+.ep-cover-deck {
+    font-size: 14px;
+    line-height: 1.8;
+
+    text-align: center;
+    font-weight: 500;
+
+    padding: 3px 13px 11px;
+    margin: 0 0 12px;
+
+    border-bottom: 3px solid var(--ink);
+}
+
+/* CLASSIC PRINT COLUMNS */
+
+.ep-lead-table,
+.ep-story-table {
+    table-layout: fixed;
+
+    width: 100%;
+
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.ep-cover-main,
+.ep-cover-rail,
+.ep-story-cell {
+    vertical-align: top;
+}
+
+.ep-cover-main {
+    width: 60%;
+
+    padding: 0 14px 0 0;
+
+    border-right: 1px solid var(--rule);
+}
+
+.ep-cover-rail {
+    width: 40%;
+
+    padding: 0 0 0 14px;
+}
+
+/* MAIN FRONT PAGE IMAGE */
+
+.ep-cover-photo {
+    display: block;
+
+    width: 100%;
+    height: auto;
+    max-height: 345px;
+
+    object-fit: cover;
+
+    filter: grayscale(18%) sepia(9%);
+
+    border: 1px solid var(--rule);
+}
+
+.ep-photo-caption {
+    font-size: 9px;
+    color: #70665a;
+
+    text-align: right;
+
+    margin: 5px 0;
+}
+
+/* CATEGORY LABEL */
+
+.ep-story-category {
+    font-size: 11px;
+    font-weight: 800;
+
+    color: var(--print-red);
+
+    letter-spacing: 0.3px;
+
+    margin-bottom: 6px;
+}
+
+/* MAIN ARTICLE SUMMARY */
+
+.ep-cover-body p {
+    font-size: 12px;
+    line-height: 1.85;
+
+    text-align: justify;
+
+    margin: 5px 0 9px;
+}
+
+/* READ MORE LINK */
+
+.ep-read-link {
+    font-size: 10px;
+    font-weight: 800;
+
+    color: var(--print-red) !important;
+
+    letter-spacing: 0.2px;
+}
+
+/* FRONT PAGE SIDE STORIES */
+
+.ep-rail-story {
+    border-bottom: 1px solid var(--rule);
+
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.ep-rail-story:last-child {
+    border-bottom: 0;
+}
+
+.ep-rail-story h2 {
+    font-weight: 900;
+    font-size: 17px;
+
+    line-height: 1.55;
+
+    margin: 3px 0 6px;
+}
+
+.ep-rail-story p {
+    font-size: 11px;
+    line-height: 1.7;
+
+    text-align: justify;
+
+    margin: 5px 0 7px;
+}
+
+/* INSIDE PAGE SECTION STRIP */
+
+.ep-section-banner {
+    display: flex;
+    justify-content: space-between;
+
+    text-align: left;
+    align-items: center;
+
+    margin-bottom: 11px;
+}
+
+.ep-section-banner small {
+    font: normal 10px Georgia, serif;
+
+    letter-spacing: 0.2px;
+}
+
+/* INSIDE PAGE ARTICLE CELLS */
+
+.ep-story-cell {
+    width: 50%;
+
+    border-bottom: 1px solid var(--rule);
+
+    padding: 11px 13px 14px;
+}
+
+.ep-story-cell:nth-child(odd) {
+    border-right: 1px solid var(--rule);
+    padding-left: 0;
+}
+
+.ep-story-cell:nth-child(even) {
+    padding-right: 0;
+}
+
+.ep-story-cell h2 {
+    font-size: 19px;
+    font-weight: 900;
+
+    line-height: 1.55;
+
+    margin: 4px 0 7px;
+}
+
+/* ARTICLE THUMBNAILS */
+
+.ep-story-photo {
+    display: block;
+
+    width: 100%;
+    max-height: 153px;
+    height: auto;
+
+    object-fit: cover;
+
+    border: 1px solid var(--rule);
+
+    filter: grayscale(18%) sepia(8%);
+
+    margin-bottom: 8px;
+}
+
+.ep-story-cell p {
+    font-size: 12px;
+    line-height: 1.8;
+
+    text-align: justify;
+
+    margin: 3px 0 8px;
+}
+
+/* BOTTOM PAGE NUMBER */
+
+.ep-paper-footer {
+    position: absolute;
+
+    bottom: 15px;
+    left: 38px;
+    right: 38px;
+
+    border-top: 3px double var(--ink);
+
+    padding: 9px 0 0;
+
+    display: flex;
+    gap: 8px;
+
+    align-items: center;
+    justify-content: space-between;
+
+    font: 600 9px Georgia, serif;
+
+    letter-spacing: 0.3px;
+}
+
+/* COLUMN-ONLY PDF FOOTER */
+
+.ep-column-print {
+    position: relative;
+}
+
+.ep-column-print .ep-paper-footer {
+    position: static;
+    margin-top: 18px;
+}
+
+/* MOBILE READER — KEEP NEWSPAPER FORMAT */
+
+@media (max-width: 650px) {
+
+    .ep-sheet {
+        width: 760px;
+        max-width: none;
+
+        min-height: 1100px;
+
+        padding: 21px 26px 50px;
+    }
+
+    .ep-masthead-name {
+        font-size: 43px;
+    }
+
+    .ep-cover-headline {
+        font-size: 27px;
+    }
+
+    .ep-cover-deck {
+        font-size: 12px;
+    }
+
+    .ep-story-cell h2 {
+        font-size: 16px;
+    }
+
+    .ep-rail-story h2 {
+        font-size: 15px;
+    }
+
+    .ep-paper-footer {
+        left: 26px;
+        right: 26px;
+    }
+
+}
+
+/* PDF PRINT CORRECTIONS */
+
+@media print {
+
+    .ep-sheet {
+        border: 0;
+        box-shadow: none;
+    }
+
+    .ep-sheet a,
+    .ep-column-print a {
+        color: #251f19;
+    }
+
+}

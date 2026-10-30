@@ -1,0 +1,1028 @@
+/* ==========================================================================
+   START SECTION 1: CSS CUSTOM PROPERTIES (THEME VARIABLES)
+   ========================================================================== */
+:root {
+    --primary-red: #d32f2f;
+    --deep-red: #b71c1c;
+    --success-green: #00897b;
+    --bg-light: #f4f7f6;
+    --white: #ffffff;
+    --text-dark: #2d3436;
+    --card-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    --card-hover-shadow: 0 20px 40px rgba(0,0,0,0.14);
+    --transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+/* END SECTION 1: CSS CUSTOM PROPERTIES */
+
+/* ==========================================================================
+   START SECTION 2: GLOBAL RESET & BASE TYPOGRAPHY
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: 'Hind Siliguri', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.5;
+    overflow-x: hidden;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+}
+
+a, button, img, .sub-card, .feed-item, .most-read-item, .ad-slot {
+    transition: var(--transition);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+/* END SECTION 2: GLOBAL RESET & BASE TYPOGRAPHY */
+
+/* ==========================================================================
+   START SECTION 3: SCROLL REVEAL ANIMATIONS
+   ========================================================================== */
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    will-change: opacity, transform;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+ /* END SECTION 3: SCROLL REVEAL ANIMATIONS */
+
+/* ==========================================================================
+   START SECTION 4: TOP UTILITY BAR
+   ========================================================================== */
+.top-bar {
+    background: #111;
+    color: rgba(255,255,255,0.85);
+    padding: 8px 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    text-align: center;
+}
+
+.top-bar-right {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.epaper-btn {
+    background: var(--primary-red);
+    padding: 3px 14px;
+    border-radius: 50px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(211, 47, 47, 0.3);
+}
+
+.epaper-btn:hover {
+    transform: scale(1.06);
+    background: var(--deep-red);
+}
+
+.lang-btn {
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 3px 12px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 700;
+    font-family: inherit;
+    font-size: 0.75rem;
+}
+
+.lang-btn:hover {
+    background: var(--success-green);
+    border-color: var(--success-green);
+    transform: translateY(-1px);
+}
+
+@media (min-width: 768px) {
+    .top-bar {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 8px 10%;
+    }
+}
+/* END SECTION 4: TOP UTILITY BAR */
+
+/* ==========================================================================
+   START SECTION 5: BRANDING HEADER & IMAGE LOGO
+   ========================================================================== */
+header {
+    background: var(--white);
+    padding: 15px 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-img {
+    height: 54px;
+    width: auto;
+    max-width: 240px;
+    object-fit: contain;
+}
+
+.logo-img:hover {
+    transform: scale(1.02);
+}
+
+.search-box {
+    display: flex;
+    background: #f1f2f6;
+    border-radius: 50px;
+    padding: 4px;
+    border: 2px solid #eee;
+    width: 100%;
+    max-width: 350px;
+    transition: var(--transition);
+}
+
+.search-box:focus-within {
+    border-color: var(--primary-red);
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.1);
+}
+
+.search-box input {
+    border: none;
+    background: transparent;
+    padding: 6px 15px;
+    outline: none;
+    flex-grow: 1;
+    font-family: inherit;
+    font-size: 0.85rem;
+}
+
+.search-box button {
+    background: var(--text-dark);
+    color: white;
+    border: none;
+    padding: 6px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.8rem;
+    font-family: inherit;
+}
+
+.search-box button:hover {
+    background: var(--primary-red);
+}
+
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 18px 10%;
+    }
+    .logo-img {
+        height: 68px;
+        max-width: 300px;
+    }
+}
+/* END SECTION 5: BRANDING HEADER & IMAGE LOGO */
+
+/* ==========================================================================
+   START SECTION 6: STICKY NAVIGATION BAR
+   ========================================================================== */
+nav {
+    background: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0 5%;
+    border-bottom: 4px solid var(--primary-red);
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+nav::-webkit-scrollbar {
+    display: none;
+}
+
+nav a {
+    padding: 14px 2px;
+    font-weight: 700;
+    color: #444;
+    white-space: nowrap;
+    position: relative;
+    font-size: 0.92rem;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background: var(--primary-red);
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--primary-red);
+}
+
+nav a::after {
+    bottom: 0;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    nav {
+        padding: 0 10%;
+        gap: 26px;
+    }
+}
+/* END SECTION 6: STICKY NAVIGATION BAR */
+
+/* ==========================================================================
+   START SECTION 7: BREAKING NEWS TICKER
+   ========================================================================== */
+.ticker {
+    margin: 12px 5%;
+    background: var(--white);
+    border-radius: 8px;
+    display: flex;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+}
+
+.ticker-title {
+    background: var(--success-green);
+    color: white;
+    padding: 8px 15px;
+    font-weight: 800;
+    font-size: 0.82rem;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulseDot 1.4s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.4);
+        opacity: 0.4;
+    }
+}
+
+marquee {
+    font-size: 0.85rem;
+    padding: 8px 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .ticker {
+        margin: 15px 10%;
+    }
+}
+/* END SECTION 7: BREAKING NEWS TICKER */
+
+/* ==========================================================================
+   START SECTION 8: POST DETAILS MAIN LAYOUT & ARTICLE STYLES
+   ========================================================================== */
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 15px 5%;
+    align-items: start;
+}
+
+.main-col-left,
+.main-col-middle {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media (min-width: 1024px) {
+    .main-container.post-details-layout {
+        grid-template-columns: 2.5fr 1fr;
+        padding: 15px 10%;
+    }
+}
+
+.article-section {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+}
+
+.breadcrumb {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.breadcrumb a {
+    color: var(--primary-red);
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.article-title {
+    font-size: 1.8rem;
+    line-height: 1.35;
+    color: #111;
+    margin-bottom: 15px;
+}
+
+@media (min-width: 768px) {
+    .article-title {
+        font-size: 2.3rem;
+    }
+}
+
+.article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #555;
+    font-weight: 600;
+}
+
+.author-info,
+.time-info {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.author-info i,
+.time-info i {
+    color: var(--primary-red);
+}
+
+.share-buttons {
+    margin-left: auto;
+    display: flex;
+    gap: 15px;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.share-buttons i:hover {
+    transform: translateY(-2px);
+}
+
+.article-featured-image {
+    margin-bottom: 25px;
+}
+
+.article-featured-image img {
+    width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.image-caption {
+    text-align: right;
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 6px;
+}
+
+.article-body {
+    font-size: 1.1rem;
+    line-height: 1.85;
+    color: #2c3e50;
+}
+
+.article-body p {
+    margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   START SECTION 8.1: IN-POST & LEADERBOARD ADVERTISEMENT DIVISIONS
+   ========================================================================== */
+.post-leaderboard-ad {
+    background: var(--white);
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    border: 1px dashed #ccc;
+    text-align: center;
+}
+
+.ad-leaderboard-box {
+    height: 125px;
+}
+
+.middle-ad {
+    margin: 28px 0;
+    background: #f8f9fa;
+    border: 1px dashed #ccc;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.middle-ad img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin: 0 auto;
+}
+
+.ad-inpost-banner {
+    height: 145px;
+}
+
+.ad-label {
+    display: block;
+    font-size: 0.75rem;
+    color: #888;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: 700;
+}
+
+.in-post-dual-ads {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin: 28px 0 15px 0;
+}
+
+@media (min-width: 640px) {
+    .in-post-dual-ads {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.ad-dual-card {
+    height: 165px;
+}
+
+.article-tags {
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.article-tags a {
+    background: #f1f2f6;
+    padding: 5px 14px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #444;
+}
+
+.article-tags a:hover {
+    background: var(--primary-red);
+    color: white;
+}
+/* END SECTION 8 & 8.1: POST DETAILS MAIN LAYOUT & IN-POST ADS */
+
+/* ==========================================================================
+   START SECTION 9: RELATED POSTS GRID
+   ========================================================================== */
+.related-posts-section {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+}
+
+.section-title {
+    text-align: center;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #333;
+    font-size: 1.05rem;
+}
+
+.grid-3-col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+@media (min-width: 600px) {
+    .grid-3-col {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .grid-3-col {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.sub-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-card img {
+    width: 100%;
+    height: 155px;
+    object-fit: cover;
+}
+
+.sub-card-body {
+    padding: 14px;
+}
+
+.sub-card h3 {
+    font-size: 0.94rem;
+    line-height: 1.4;
+    color: #111;
+}
+
+.sub-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-hover-shadow);
+}
+
+.sub-card:hover h3 {
+    color: var(--primary-red);
+}
+/* END SECTION 9: RELATED POSTS GRID */
+
+/* ==========================================================================
+   START SECTION 10: RIGHT SIDEBAR WIDGETS & RIGHT BAR AD SLOTS
+   ========================================================================== */
+.sidebar {
+    background: var(--white);
+    padding: 18px;
+    border-radius: 15px;
+    box-shadow: var(--card-shadow);
+}
+
+.sidebar h3,
+.sidebar-title {
+    font-size: 1.1rem;
+    color: var(--success-green);
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.feed-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 13px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+}
+
+.feed-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.feed-item img {
+    width: 82px;
+    height: 60px;
+    border-radius: 6px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.feed-item:hover img {
+    transform: scale(1.05);
+}
+
+.feed-item h4 {
+    font-size: 0.85rem;
+    margin: 0 0 4px 0;
+    line-height: 1.35;
+    color: #222;
+}
+
+.feed-item:hover h4 {
+    color: var(--primary-red);
+}
+
+.feed-time {
+    font-size: 0.72rem;
+    color: #888;
+    display: block;
+}
+
+.most-read-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+}
+
+.most-read-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.most-read-rank {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #f1f2f6;
+    color: var(--primary-red);
+    font-weight: 800;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.most-read-item:hover .most-read-rank {
+    background: var(--primary-red);
+    color: #fff;
+}
+
+.most-read-item h4 {
+    font-size: 0.85rem;
+    line-height: 1.35;
+    color: #222;
+}
+
+.most-read-item:hover h4 {
+    color: var(--primary-red);
+}
+
+/* Shared Ad Slot & Right Bar Ad Sizes */
+.ad-slot {
+    background: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #777;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--card-shadow);
+    cursor: pointer;
+}
+
+.ad-banner-box {
+    height: 165px;
+}
+
+.ad-promo-box {
+    height: 310px;
+}
+
+.ad-skyscraper-box {
+    height: 350px;
+}
+
+.ad-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.75);
+}
+
+.ad-slot:hover img {
+    transform: scale(1.04);
+}
+
+.ad-overlay-text {
+    position: absolute;
+    background: rgba(0,0,0,0.68);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    text-align: center;
+    backdrop-filter: blur(3px);
+    max-width: 90%;
+}
+
+.right-info-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    border: 1px solid #eee;
+}
+
+.right-info-header {
+    background: var(--primary-red);
+    color: var(--white);
+    padding: 9px 12px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.right-info-body {
+    padding: 14px;
+    text-align: center;
+}
+
+.right-info-body img {
+    width: 100%;
+    height: 135px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    border: 1px solid #eee;
+}
+
+.right-info-body p {
+    font-size: 0.8rem;
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.epaper-card-btn {
+    display: inline-block;
+    width: 100%;
+    background: #111;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.82rem;
+}
+
+.epaper-card-btn:hover {
+    background: var(--primary-red);
+}
+/* END SECTION 10: RIGHT SIDEBAR WIDGETS & RIGHT BAR AD SLOTS */
+
+/* ==========================================================================
+   START SECTION 11: MAIN FOOTER & SCROLL-TO-TOP BUTTON
+   ========================================================================== */
+.main-footer {
+    background: #b2b2b2;
+    color: #333;
+    padding: 30px 10% 10px 10%;
+    margin-top: 40px;
+    border-top: 5px solid #111;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #888;
+}
+
+.footer-logo-img {
+    height: 56px;
+    width: auto;
+    max-width: 240px;
+    object-fit: contain;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-socials a {
+    font-size: 1.6rem;
+    color: #222;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-socials a:hover {
+    background: var(--primary-red);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.footer-links-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.footer-links-grid div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.footer-links-grid a:hover {
+    color: var(--deep-red);
+    padding-left: 4px;
+}
+
+.footer-info {
+    padding: 20px 0;
+    border-top: 1px solid #888;
+    font-size: 0.85rem;
+    line-height: 1.65;
+}
+
+.footer-bottom-bar {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 12px 10px;
+    margin: 0 -12.5%;
+    font-size: 0.8rem;
+}
+
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary-red);
+    color: white;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1001;
+    box-shadow: 0 6px 18px rgba(211, 47, 47, 0.4);
+}
+
+.scroll-top:hover {
+    background: var(--deep-red);
+    transform: translateY(-4px);
+}
+/* END SECTION 11: MAIN FOOTER & SCROLL-TO-TOP BUTTON */
+
+/* ==========================================================================
+   START SECTION 12: MOBILE TYPOGRAPHY & RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 767px) {
+    body {
+        font-size: 12.5px;
+        line-height: 1.45;
+    }
+
+    .top-bar {
+        font-size: 0.68rem;
+        padding: 6px 4%;
+        gap: 5px;
+    }
+
+    .logo-img {
+        height: 44px;
+        max-width: 200px;
+    }
+
+    nav a {
+        padding: 10px 0;
+        font-size: 0.8rem;
+    }
+
+    .article-section {
+        padding: 16px;
+    }
+
+    .article-title {
+        font-size: 1.35rem;
+    }
+
+    .article-body {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .ad-leaderboard-box,
+    .ad-inpost-banner,
+    .ad-dual-card {
+        height: 115px;
+    }
+
+    .ad-overlay-text {
+        font-size: 0.72rem;
+        padding: 6px 10px;
+    }
+
+    .sub-card h3 {
+        font-size: 0.84rem;
+    }
+
+    .feed-item h4,
+    .most-read-item h4 {
+        font-size: 0.78rem;
+    }
+
+    .footer-links-grid {
+        grid-template-columns: repeat(3, 1fr);
+        font-size: 0.78rem;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .footer-info {
+        font-size: 0.75rem;
+    }
+
+    .footer-bottom-bar {
+        font-size: 0.72rem;
+        margin: 0 -6%;
+    }
+}
+/* END SECTION 12: MOBILE TYPOGRAPHY & RESPONSIVE BREAKPOINTS */

@@ -1,0 +1,386 @@
+/* ==========================================================
+   DAILY DARIYANAGAR — CATEGORY PAGE ONLY
+   Reuses the existing /frontend/css/style.css design system.
+   ========================================================== */
+
+.category-page {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 16px 10% 24px;
+}
+
+.category-breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+    padding: 10px 0 18px;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.category-breadcrumb a:hover,
+.category-story-card a:hover,
+.category-lead-body h2 a:hover {
+    color: var(--primary-red);
+}
+
+.category-breadcrumb i {
+    font-size: 0.7rem;
+    color: #999;
+}
+
+.category-page-layout {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 2.3fr)
+        minmax(250px, 0.9fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.category-main,
+.category-sidebar {
+    min-width: 0;
+}
+
+.category-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.category-main-heading {
+    margin-bottom: 12px;
+}
+
+.category-main-heading h1 {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+
+.category-description {
+    color: #555;
+    line-height: 1.7;
+    font-size: 0.92rem;
+    margin: 0 0 14px;
+}
+
+/* CATEGORY TOOLBAR */
+
+.category-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+    padding: 11px 14px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background: var(--white);
+}
+
+.category-total,
+.category-sort-form {
+    font-size: 0.84rem;
+    color: #555;
+}
+
+.category-sort-form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.category-sort-form select {
+    padding: 7px 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fff;
+    color: #333;
+    font: inherit;
+    max-width: 170px;
+}
+
+.category-sort-form select:focus-visible,
+.category-pagination a:focus-visible,
+.category-sidebar-links a:focus-visible {
+    outline: 2px solid var(--success-green);
+    outline-offset: 2px;
+}
+
+.category-sort-submit {
+    padding: 7px 12px;
+    border: 0;
+    border-radius: 6px;
+    background: var(--success-green);
+    color: #fff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* FEATURED CATEGORY ARTICLE */
+
+.category-lead-card.img-card {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1.12fr);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.category-lead-photo {
+    display: block;
+    overflow: hidden;
+    min-height: 245px;
+}
+
+.category-lead-photo img {
+    width: 100%;
+    height: 100%;
+    min-height: 245px;
+    object-fit: cover;
+}
+
+.category-lead-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 18px;
+}
+
+.category-lead-body h2 {
+    color: #111;
+    font-size: 1.24rem;
+    line-height: 1.45;
+    margin: 8px 0 10px;
+}
+
+.category-lead-body p {
+    font-size: 0.85rem;
+    line-height: 1.65;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+.category-story-info {
+    color: #777;
+    font-size: 0.73rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.category-read-more,
+.category-card-link {
+    font-size: 0.82rem;
+    color: var(--primary-red);
+    font-weight: 700;
+}
+
+.category-read-more {
+    align-self: flex-start;
+    margin-top: 4px;
+}
+
+/* CATEGORY ARTICLE GRID */
+
+.category-story-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.category-story-card {
+    min-width: 0;
+}
+
+.category-story-photo {
+    display: block;
+    overflow: hidden;
+}
+
+.category-story-card .sub-card-body {
+    padding: 15px;
+}
+
+.category-story-card h3 {
+    margin: 8px 0;
+}
+
+.category-story-card .sub-card-body > p {
+    margin: 8px 0 12px;
+}
+
+/* ALL CATEGORY LINKS */
+
+.category-sidebar-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.category-sidebar-links a {
+    padding: 8px 10px;
+    background: #f4f7f6;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    color: #444;
+    line-height: 1.35;
+}
+
+.category-sidebar-links a:hover,
+.category-sidebar-links a.category-active {
+    color: #fff;
+    background: var(--success-green);
+}
+
+/* EMPTY CATEGORY */
+
+.category-empty {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.category-empty h2 {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+}
+
+/* PAGINATION */
+
+/*
+   Global style.css makes every nav sticky.
+   Reset this behavior only for category pagination.
+*/
+
+nav.category-pagination {
+    position: static;
+    top: auto;
+    z-index: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 7px;
+    margin: 24px 0 8px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    overflow: visible;
+}
+
+.category-pagination a,
+.category-page-disabled {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 35px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #333;
+    font-size: 0.83rem;
+    font-weight: 600;
+}
+
+.category-pagination a::after {
+    display: none;
+}
+
+.category-pagination a:hover,
+.category-pagination a.category-page-current {
+    color: #fff;
+    border-color: var(--primary-red);
+    background: var(--primary-red);
+}
+
+.category-page-disabled {
+    opacity: 0.45;
+    cursor: default;
+}
+
+/* LOCAL DRAFT PREVIEW NOTICE */
+
+.category-preview-notice {
+    padding: 10px 13px;
+    margin-bottom: 15px;
+    background: #fff3df;
+    border: 1px solid #efd2a4;
+    border-radius: 6px;
+    color: #6b4717;
+    font-size: 0.82rem;
+}
+
+/* TABLET */
+
+@media (max-width: 1023px) {
+
+    .category-page {
+        padding: 14px 5% 25px;
+    }
+
+    .category-page-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .category-sidebar {
+        display: grid;
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .category-page {
+        padding: 10px 5% 25px;
+    }
+
+    .category-story-grid,
+    .category-sidebar {
+        grid-template-columns: 1fr;
+    }
+
+    .category-lead-card.img-card {
+        grid-template-columns: 1fr;
+    }
+
+    .category-lead-photo,
+    .category-lead-photo img {
+        min-height: 0;
+    }
+
+    .category-lead-photo img {
+        height: 190px;
+    }
+
+    .category-lead-body h2 {
+        font-size: 1.08rem;
+    }
+
+    .category-lead-body p,
+    .category-description {
+        font-size: 0.78rem;
+    }
+
+    .category-toolbar {
+        padding: 10px;
+    }
+
+    .category-sidebar-links {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
