@@ -57,8 +57,7 @@
 
         <div class="footer-info" id="footer-editorial-info">
             <span data-bn="© ডেইলি দরিয়ানগর ২০১৫ - ২০২৬ । তথ্য অধিদফতরের নিবন্ধন নম্বর : ৬৪" data-en="© Daily Dariyanagar 2015 - 2026 | PID Registration No: 64">© ডেইলি দরিয়ানগর ২০১৫ - ২০২৬ । তথ্য অধিদফতরের নিবন্ধন নম্বর : ৬৪</span> <br>
-            <span data-bn="প্রতিষ্ঠাতা সম্পাদক : আহমদ উল্লাহ" data-en="Founding Editor: Ahmad Ullah">প্রতিষ্ঠাতা সম্পাদক : আহমদ উল্লাহ</span> <br>
-            <span data-bn="ভারপ্রাপ্ত সম্পাদক : মোহাম্মদ রফিকুল ইসলাম" data-en="Acting Editor: Mohammad Rafiqul Islam">ভারপ্রাপ্ত সম্পাদক : মোহাম্মদ রফিকুল ইসলাম</span> <br>
+            <span data-bn="সম্পাদক : একরামুল হক শামীম " data-en="Founding Editor: Ekramul Hoque Shamim">সম্পাদক : একরামুল হক শামীম </span> <br>
             <span data-bn="ভবন ১২, রোড ৫ | ৪৫ পোর্ট এভিনিউ, চট্টগ্রাম-৪০০০ |" data-en="Building 12, Road 5 | 45 Port Avenue, Chattogram-4000 |">ভবন ১২, রোড ৫ | ৪৫ পোর্ট এভিনিউ, চট্টগ্রাম-৪০০০ |</span> <br>
             <span data-bn="ইমেইল : news@dailydariyanagar.com (নিউজ), info@dailydariyanagar.com (সম্পাদক) | ফোন : ০২৩৩৩৩৭৫৮৪৪" data-en="Email: news@dailydariyanagar.com (News), info@dailydariyanagar.com (Editor) | Phone: +880-2333375844">ইমেইল : news@dailydariyanagar.com (নিউজ), info@dailydariyanagar.com (সম্পাদক) | ফোন : ০২৩৩৩৩৭৫৮৪৪</span>
         </div>
